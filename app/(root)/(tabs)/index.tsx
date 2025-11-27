@@ -9,7 +9,7 @@ export default function Index() {
         alignItems: "center",
       }}
     >
-      <Text>App</Text>
+      <Text className="mb-0 font-rubik-bold text-xl">Homes App</Text>
     </View>
   );
 }
