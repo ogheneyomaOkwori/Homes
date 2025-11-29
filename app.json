@@ -4,7 +4,7 @@
     "slug": "Homes",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/homes2.jpg",
+    "icon": "./assets/images/homes.png",
     "scheme": "homes",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,

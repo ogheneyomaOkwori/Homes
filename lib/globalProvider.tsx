@@ -9,7 +9,6 @@ interface User {
   avatar: string;
 }
 
-
 interface GlobalContextType {
   isLoggedIn: boolean;
   user: User | null | undefined;
@@ -44,7 +43,7 @@ export const GlobalProvider = (
     : null;
 
 
-  console.log(JSON.stringify(user, null, 2));
+  // console.log(JSON.stringify(user, null, 2), 'user json');
 
   return (
     <GlobalContext.Provider value={{
