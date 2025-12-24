@@ -16,6 +16,7 @@ export default function Index() {
   const { user } = useGlobalContext();
 
   const params = useLocalSearchParams<{ query?: string, filter?: string; }>();
+  const LIMIT = 8
 
   const { data: latestProperties, loading: isLoadingLatestProperties } = useAppwrite(
     {
@@ -33,7 +34,7 @@ export default function Index() {
       params: {
         filter: params.filter,
         query: params.query,
-        limit: 6
+        limit: LIMIT
       },
       skip: true
     }
@@ -55,7 +56,7 @@ export default function Index() {
     refetchProperties({
       filter: params.filter,
       query: params.query,
-      limit: 6
+      limit: LIMIT
 
     })
   }, [params.filter, params.query]);

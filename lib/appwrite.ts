@@ -79,7 +79,7 @@ export async function getCurrentUser() {
       }
     }
   } catch (error) {
-    console.error(error);
+    // console.error(error);
     return null;
   }
 }
@@ -111,7 +111,7 @@ export async function getProperties(
   try {
     const buildQuery = [Query.orderDesc('$createdAt')];
     if (filter && filter !== 'All') {
-      buildQuery.push(Query.equal('category', filter));
+      buildQuery.push(Query.equal('type', filter));
     }
     if (query) {
       buildQuery.push(
@@ -136,5 +136,19 @@ export async function getProperties(
   } catch (error) {
     console.error(error);
     return [];
+  }
+}
+
+export async function getPropertyById({ id }: { id: string }) {
+  try {
+    const result = await databases.getDocument(
+      config.databaseId!,
+      config.propertiesCollectionId!,
+      id
+    );
+    return result;
+  } catch (error) {
+    console.error(error);
+    return null;
   }
 }
